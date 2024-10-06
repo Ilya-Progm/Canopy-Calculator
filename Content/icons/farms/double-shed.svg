@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="double-shed.svg"
+   id="svg874"
+   viewBox="0 0 5600 1400"
+   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   version="1.1"
+   height="14mm"
+   width="56mm"
+   xml:space="preserve">
+  <metadata
+   id="metadata878">
+    <rdf:RDF>
+      <cc:Work
+       rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+   inkscape:current-layer="svg874"
+   inkscape:window-maximized="0"
+   inkscape:window-y="0"
+   inkscape:window-x="0"
+   inkscape:cy="392.4735"
+   inkscape:cx="278.34484"
+   inkscape:zoom="0.94324703"
+   showgrid="false"
+   id="namedview876"
+   inkscape:window-height="1120"
+   inkscape:window-width="1792"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff" />
+  <defs
+   id="defs835">
+    <style
+   id="style833"
+   type="text/css">
+      <![CDATA[
+    .fil2 {fill:#444}
+    .fil1 {fill:#E31E24;fill-rule:nonzero}
+    .fil0 {fill:#444;fill-rule:nonzero}
+    .fil3 {fill:#444;fill-rule:nonzero}
+   ]]>
+    </style>
+  </defs>
+  <g
+   transform="translate(-84.150808,-757.35727)"
+   id="Слой_x0020_1">
+    <metadata
+   id="CorelCorpID_0Corel-Layer" />
+    <g
+   id="_2071511498624">
+      <path
+   id="path838"
+   d="m 2854.77,981.49 -2147.01,723.69 2149.48,-11.9 z m -2372.19,746.36 2392.48,-796.9 1.22,864.19 -2381.77,-12.65 z"
+   class="fil0" />
+      <path
+   id="path840"
+   d="m 2841.65,999.83 -2052.14,691.72 2054.5,-11.38 z m -2138.08,692.84 2158.36,-727.52 -0.02,-15.93 -2363.89,787.37 7.15,32.78 2357.91,12.52 -0.11,-75.46 c -745.65,3.94 -1491.3,8.28 -2236.95,12.38 z m -225.12,22.67 2409.77,-802.66 1.26,895.71 c -801.88,-4.24 -1603.76,-8.25 -2405.63,-12.78 l -16.7,-76.51 z"
+   class="fil0" />
+      <path
+   id="path842"
+   d="m 2895.37,981.48 2147.01,723.69 -2146.86,-11.91 z m 2372.2,746.36 -2392.49,-796.9 1.42,864.17 2379.13,-12.63 z"
+   class="fil0" />
+      <path
+   id="path844"
+   d="m 2899.56,968.97 2224.58,749.83 c -744.85,-4.1 -1489.77,-7.38 -2234.61,-12.4 l 0.13,75.46 2355.31,-12.5 7.16,-32.78 -2363.84,-787.35 0.03,15.95 z m 2061.07,722.57 -2052.08,-691.69 0.15,680.3 z m -2081.42,-773.11 2403.81,800.66 -16.72,76.51 c -800.98,4.53 -1601.97,8.51 -2402.95,12.76 -0.68,-298.57 -0.99,-597.14 -1.48,-895.71 z"
+   class="fil0" />
+      <path
+   id="path846"
+   d="M 168.83,1744.7 C 1067.38,1450 1963.43,1146.08 2862.37,851.25 l 12.79,-4.21 c 905.12,297.56 1806.94,603.97 2712.34,900.69 l -25.59,78.69 L 2875.16,934.14 C 1980.6,1227.79 1088.68,1530.1 194.42,1823.39 Z"
+   class="fil1" />
+      <polygon
+   id="polygon848"
+   points="853.7,2022.39 734.02,2022.39 734.02,1728.64 853.7,1728.64 "
+   class="fil2" />
+      <polygon
+   id="polygon850"
+   points="4989.89,2023.12 4870.21,2023.12 4870.21,1729.37 4989.89,1729.37 "
+   class="fil2" />
+      <polygon
+   id="polygon852"
+   points="1473.91,1435.26 1473.91,1728.49 1403.35,1728.49 1403.35,1435.26 "
+   class="fil0" />
+      <polygon
+   id="polygon854"
+   points="1164.34,1550.98 1164.34,1763.35 1093.78,1763.35 1093.78,1550.98 "
+   class="fil0" />
+      <polygon
+   id="polygon856"
+   points="1942.23,1286.01 1942.23,1751.2 1871.67,1751.2 1871.67,1286.01 "
+   class="fil0" />
+      <polygon
+   id="polygon858"
+   points="2397.32,1118.28 2397.32,1758.9 2326.76,1758.9 2326.76,1118.28 "
+   class="fil0" />
+      <polygon
+   id="polygon860"
+   points="1423.84,1729.15 1135.51,1566.02 1170.23,1504.84 1436.79,1655.65 1886.44,1264.45 1932.74,1264.59 2361.91,1640.17 2838.44,948.28 2896.32,988.24 2397.42,1712.62 2345.33,1719.1 1909.6,1337.78 1464.35,1725.16 "
+   class="fil3" />
+      <polygon
+   id="polygon862"
+   points="4374.43,1467.04 4374.43,1760.27 4303.87,1760.27 4303.87,1467.04 "
+   class="fil0" />
+      <polygon
+   id="polygon864"
+   points="4684,1561.61 4684,1760.04 4613.44,1760.04 4613.44,1561.61 "
+   class="fil0" />
+      <polygon
+   id="polygon866"
+   points="3906.11,1317.79 3906.11,1782.98 3835.55,1782.98 3835.55,1317.79 "
+   class="fil0" />
+      <polygon
+   id="polygon868"
+   points="3451.02,1150.06 3451.02,1790.68 3380.46,1790.68 3380.46,1150.06 "
+   class="fil0" />
+      <polygon
+   id="polygon870"
+   points="4340.99,1687.43 4607.55,1536.62 4642.27,1597.8 4353.94,1760.93 4313.43,1756.94 3868.18,1369.56 3432.45,1750.88 3380.36,1744.4 2881.46,1020.02 2939.34,980.06 3415.87,1671.95 3845.04,1296.37 3891.34,1296.23 "
+   class="fil3" />
+    </g>
+  </g>
+</svg>
