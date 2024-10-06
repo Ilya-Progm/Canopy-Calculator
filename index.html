@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#" lang="ru" class="grid-hidden">
+
+<head>
+
+    <meta name="yandex-verification" content="6caf6ea2dee10ace" />
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#324284" />
+    <link rel="canonical" href="https://mosnavesi.ru/calc/">
+    <link rel="manifest" href="../pwa/manifest.json">
+<link rel="icon" href="https://mosnavesi.ru/favicon.svg" type="image/x-icon">
+
+
+        <meta name="description" content="Онлайн калькулятор расчета стоимости навесов из поликарбоната, профнастила, металлочерепицы с 3D визуализацией и полной сметой результатов расчета">
+    <meta property="og:description" content="Онлайн калькулятор расчета стоимости навесов из поликарбоната, профнастила, металлочерепицы с 3D визуализацией и полной сметой результатов расчета" />
+
+    <meta property="og:site_name" content="mosnavesi.ru" />
+    <meta property="og:title" content=" Калькулятор навесов - расчет онлайн в 3D" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mosnavesi.ru/calc/" />
+
+    <meta property="og:image" content="https://mosnavesi.ru/content/images/calculator.jpg" />
+
+    <meta property="og:image:width" content="1200" />
+
+    <meta property="og:image:height" content="800" />
+
+    <title> Калькулятор навесов - расчет онлайн в 3D</title>
+
+
+    <link href="../styles/scss/main.css?ver=952" rel="stylesheet">
+
+    
+
+</head>
+
+<body :style="`overflow:${isFilterOpen ? 'hidden' : 'visible'}`" class=" area- action-showcustompage">
+
+
+    <div id="app" class="main-grid">
+        <message v-model="messageVisible" :message="message" :type="type"></message>
+        
+        
+
+<header class="site-header company-header-3">
+
+    <div class="site-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3  mt-2 mb-2">
+                    <div class="row">
+                        <div class="col-10">
+                            <a href="/">
+                                <img src="../content/images/logo-new.svg" style="margin-top:3px" alt="Моснавесы" />
+                            </a>
+                        </div>
+                        <div class="col-2 d-md-none text-right">
+                            <div class="burger-btn action--open d-md-none" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-5 mt-2 mb-2 d-none d-lg-block">
+                    <div class="text-center">
+                        <div >
+                            <b>Работаем по Москве и Московской области</b>
+                        </div>
+                        <div>
+                            <b>Пн-Вс: </b><b>09:00 - 20:00</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4  mt-2 mb-2">
+                    <div class="site-phone">
+                        <span class="phone-icon"></span>
+                        <span class="phone-number">
+                            <a href="tel:+74951516801" class="phone ga-event" v-on:click="onClickPhone()">+7 (495) 151-68-01</a>
+                            <a href="https://wa.me/74951516801" target="_blank" class="whatsapp ga-event" v-on:click="onClickPhone()">
+                                <img src="../content/images/icons/whatsapp-icon.svg"/>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="site-callback">
+                        <a class="booking booking-btn" onclick="ym(67222159,'reachGoal','backCallOrder'); return true;" v-on:click="bookingDialogVisibly=true">Обратный звонок</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+       
+<div class="site-menu bg-dark">
+    <div class="container d-flex align-items-center justify-content-between">
+       <div v-if="isInMarketPage" v-on:click="isFilterOpen=!isFilterOpen" class="d-none burger-btn action--open d-md-none" type="button">
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-list" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>
+        
+        <nav class="navbar navbar-expand-md nav-dark bg-dark"><div class="collapse navbar-collapse" id="navbarMenu"><ul class="navbar-nav p-0"><li class="dropdown text-bold"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Калькулятор 3D<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/calc/" class="dropdown-item">Калькулятор навесов</a></li><li class=""><a href="/calcfarm/" class="dropdown-item">Калькулятор ферм</a></li></ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Навесы<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/calc/" class="dropdown-item">Калькулятор навесов</a></li><li class=""><a href="/services/naves-arochnyy/" class="dropdown-item">Навес арочный</a></li><li class=""><a href="/services/naves-odnoskatnyy/" class="dropdown-item">Навес односкатный</a></li><li class=""><a href="/services/poluarochnye-navesy/" class="dropdown-item">Полуарочные навесы</a></li><li class=""><a href=" https://mosnavesi.ru/services/dvukhskatnye-navesy/" class="dropdown-item">Двухскатные навесы</a></li><li class=""><a href="/services/naves-iz-polikarbonata/" class="dropdown-item">Навес из поликарбоната</a></li><li class=""><a href="/services/naves-dlya-avtomobilya/" class="dropdown-item">Навес для автомобиля</a></li><li class=""><a href="/services/naves-pod-klyuch/" class="dropdown-item">Навес под ключ</a></li><li class=""><a href="/services/naves-k-domu-iz-polikarbonata/" class="dropdown-item">Навес к дому</a></li><li class=""><a href=" /services/naves-iz-metallocherepitsy/" class="dropdown-item">Навес из металлочерепицы</a></li><li class=""><a href="/services/naves-iz-profnastila/" class="dropdown-item">Навес из профнастила</a></li><li class=""><a href="/services/sadovyy-naves/" class="dropdown-item">Садовые навесы</a></li><li class=""><a href="/services/naves-iz-myagkoi-cherepitsy/" class="dropdown-item">Навес из мягкой черепицы</a></li><li class=""><a href="/services/naves-s-hozblokom/	" class="dropdown-item">Навес с хозблоком</a></li><li class=""><a href="/services/naves-dlya-dachi/" class="dropdown-item">Навес для дачи</a></li><li class=""><a href="https://mosnavesi.ru/services/naves-dlya-barbekyu/" class="dropdown-item">Навес для барбекю</a></li><li class=""><a href="https://mosnavesi.ru/services/naves-dlya-basseyna/" class="dropdown-item">Навес для бассейна</a></li><li class=""><a href=" https://mosnavesi.ru/services/naves-dlya-mangala/" class="dropdown-item">Навес для мангала</a></li></ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Козырьки<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/services/kozyrek-nad-kryltsom/" class="dropdown-item">Козырьки над крыльцом</a></li><li class=""><a href="/services/kozyrek-iz-polikarbonata/" class="dropdown-item">Козырьки из поликарбоната</a></li><li class=""><a href="/services/kovanyy-kozyrek/" class="dropdown-item">Кованые козырьки</a></li></ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Услуги<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/services/viezd-zamershika/" class="dropdown-item">Выезд замерщика</a></li><li class=""><a href="/services/dostavka/" class="dropdown-item">Доставка</a></li><li class=""><a href="/services/montazh/" class="dropdown-item">Монтаж навесов</a></li><li class=""><a href="https://mosnavesi.ru/services/demontazh-navesov/" class="dropdown-item">Демонтаж навесов</a></li><li class=""><a href=" https://mosnavesi.ru/services/zamena-polikarbonata/" class="dropdown-item">Замена поликарбоната</a></li><li class=""><a href=" https://mosnavesi.ru/services/fermy-dlya-navesov/" class="dropdown-item">Фермы для навеса</a></li><li class=""><a href="/services/konteynernye-ploschadki/" class="dropdown-item">Контейнерные площадки</a></li><li class=""><a href="/promoactions/" class="dropdown-item">Акции</a></li><li class=""><a href="https://mosnavesi.ru/garanties/" class="dropdown-item"> Гарантии и Сертификаты</a></li><li class="d-md-none d-lg-block"><a href="/articles/" class="dropdown-item">Статьи</a></li></ul></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Магазин<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/commodities/canopy/" class="dropdown-item">Навесы</a></li><li class=""><a href="/commodities/fermi/" class="dropdown-item">Готовые фермы</a></li><li class=""><a href="/commodities/kozirki/" class="dropdown-item">Козырьки</a></li><li class=""><a href="/commodities/lestnici/" class="dropdown-item">Лестницы</a></li><li class=""><a href="/commodities/policarbonat/" class="dropdown-item">Поликарбонат</a></li><li class=""><a href="/commodities/profilnye-truby/" class="dropdown-item">Профильные трубы</a></li><li class=""><a href="/commodities/kraska/" class="dropdown-item">Краска</a></li><li class=""><a href="/commodities/raskhodniki/" class="dropdown-item">Расходные материалы</a></li></ul></li><li class="d-md-none d-lg-block"><a href="/cases/" class="nav-link">Наши работы</a></li><li class=""><a href="/reviews/" class="nav-link">Отзывы</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О нас<span class="caret"></span></a><ul class="dropdown-menu"><li class=""><a href="/contacts/" class="dropdown-item">Контакты</a></li><li class=""><a href="/jobs/" class="dropdown-item"> Вакансии</a></li></ul></li></ul><span class="navbar-text phone-number"><a href="tel:+74951516801">+7 (495) 151-68-01</a></span></div></nav>
+        <div class="d-flex align-items-end py-2">
+          <img src="../Content/icons/search.svg"  style="width:25px;height:25px;cursor:pointer"  v-on:click="searchDialogVisibly=true"/>
+          <a class="mr-3 ml-3 position-relative" href="../cart/favorites/" class="bag">
+            <svg  style="width:22px;height:25px;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#fff" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z"/></svg>
+            
+            <span class="bag-badge badge badge-info" v-text="favoriteProductCount"></span>
+          </a>
+          <cart-menu :buy="null" class="dropdown" :cart="cart">
+            <template #activator="{activate}">
+              <div id="vue-cart-bag" class="bag">
+                 <img 
+                  title="Корзина" 
+                  v-on:click="activate" 
+                  id="vue-cart-bag" 
+                  src="../Content/icons/shopping-bag.svg" 
+                  style="width:22px;height:25px;cursor:pointer"
+                />
+                <span class="bag-badge badge badge-info" v-text="cartItemsQuantity"></span>
+              </div>
+             
+            </template>
+            
+            
+            <template #body="{item}">
+              <div class="cart-menu-product__img">
+                <img :src="getImageUrl(item)" :alt="getCaption(item)" />
+              </div>
+              <div class="cart-menu-product__info">
+                <div class="cart-menu-product__title">
+                  <span style="cursor:pointer;">{{ getCaption(item) }}</span>
+                </div>
+                <div class="cart-menu-product__price">{{ getPrice(item) }}</div>
+              </div>
+              <div class="cart-menu-product__quantity mr-2 d-flex">
+                <span>{{ getQuantity(item) }}</span><span> шт</span>
+              </div>
+              <div v-on:click="removeFromCart(item.id)" class="cart-menu-product__action">
+                <i class="fal fa-times icon text-primary"></i>
+              </div>
+            </template>
+          </cart-menu>
+         
+      
+        </div>
+       
+       
+    </div>
+</div>
+
+
+
+        <main :class="{'filter-opened':isFilterOpen}" class="site-main">
+            <div class="canvas darken">
+                <nav class="container">
+
+
+                    <ol id="" itemscope="" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb"><li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item">Главная<meta itemprop="position" content="1"><meta itemprop="name" content="Главная"></a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="breadcrumb-item active"><a itemprop="item" href="." class="d-none"><meta itemprop="position" content="2"><meta itemprop="name" content="Калькулятор навесов 3D"></a><span>Калькулятор навесов 3D</span></li></ol>
+
+                </nav>
+            </div>
+            
+
+
+<div class="canvas darken pt-3 pb-3">
+    <div class="container">
+        <h1 class="title">Калькулятор расчета навеса из профильной трубы</h1>
+        <calc :show-farm-types="true" :full-mode="true" :is-mobile="false">
+
+            <div class="calc-loading">
+                <div class="lds-roller">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    Загрузка калькулятора ...
+                </div>
+            </div>
+        </calc>
+
+
+        <div>
+            <div class="mb-5 mt-2">
+    <div class="h2">Преимущества</div>
+</div>
+
+<div class="row mb-5 advantages">
+   <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+       <div class="cardAdvant">
+           <img src="../Content/icons/advantages/clock.svg" alt="Быстрое выполнение работ"/ >
+           <div class="">Быстрое выполнение работ</div>
+       </div>
+   </div>
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+        <div class="cardAdvant">
+           <img src="../Content/icons/advantages/canopy.svg" alt="Все работы под ключ"/>
+           <div class="">Все работы под ключ</div>
+       </div>
+   </div>
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+        <div class="cardAdvant">
+           <img src="../Content/icons/advantages/certificate.svg" alt="Гарантия 5 лет"/>
+           <div class="">Гарантия 5 лет</div>
+       </div>
+   </div>
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+        <div class="cardAdvant">
+           <img src="../Content/icons/advantages/welding.svg" alt="Качественная сварка конструкции"/>
+           <div class="">Качественная сварка конструкции</div>
+       </div>
+   </div>
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+        <div class="cardAdvant">
+           <img src="../Content/icons/advantages/discount.svg" alt="Низкие цены"/>
+           <div class="">Низкие цены</div>
+       </div>
+   </div>
+    <div class="col-12 col-sm-6 col-md-6 col-xl-4">
+        <div class="cardAdvant">
+           <img src="../Content/icons/advantages/polycarbonate.svg" alt="Поликарбонат премиум класса 10мм"/>
+           <div class="">Поликарбонат премиум класса 10мм</div>
+       </div>
+   </div>
+   
+</div>
+
+            <h2>Как проверить навес на качество:</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                  
+                        <th scope="col">Столбы</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+              
+                        <td>
+                          <ol>
+                            <li>Проверьте сечение столбов. Профильная труба должна быть от 80мм шириной
+                            и толщина металла не должна быть меньше 3мм</li>
+                            <li>Шаг столбов должен быть не более 2-2,5 метров</li>
+                            <li>Рама ферм должна быть шириной не менее 30x30мм (или 40x20мм) толщиной
+                            не менее 2мм. В идеале 40x40x2мм и выше. Для пролетов выше 7 метров - 60x40x3</li>
+                          </ol>
+                        
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+                <thead>
+                    <tr>
+             
+                        <th scope="col">Фермы</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+            
+                        <td>
+                          <ol>
+                            <li>Ребра фермы должны быть толщиной не менее 1,5мм и плотно прилегать к
+                            ширине рамы. Например, при раме 40x40x2мм ребра могут быть 40x20x1,5мм</li>
+                            <li>Шаг лагов должен быть не более 50 см, в идеале 40см. Для металлочерепицы - 35см (по длине волны)</li>
+                            <li>Обрешетка ферм должна точно попадать в положение лагов </li>
+                            <li>Шаг ферм не должен превышать 1,5 метра. В идеале 1,2 м</li>
+                          </ol>
+                          
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+                <thead>
+                    <tr>
+             
+                        <th scope="col">Поликарбонат</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>
+                            <ol>
+                                <li>Плотность поликарбоната должна быть не менее 1,1кг/м2. Чем плотнее
+                                    поликарбонат - тем лучше. Если выбор стоит между более плотным поликарбонатом 8мм и менее плотным поликарбонатом 10мм, нужно выбирать более плотный. Он жестче и лучше в эксплуатации.
+                                    Толщина поликарбоната в этом случаее - менее значимый фактор.</li>
+                                <li>Поликарбонат должен монтироваться строго термошайбами, иначе он треснет
+                                    во время эксплуатации</li>
+                            </ol>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <h2>На чем обычно экономят:</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                    
+                        <th scope="col">Пункт</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+              
+                        <td>
+                            <ol>
+
+                                <li>Шаг столбов от 3 метров - экономия на металле
+                                </li>
+                                <li>Толщина металла столбов менее 3мм - экономия на металле
+                                </li>
+                                <li>Рама ферм из менее прочного профиля, толщина металла менее 2 мм -
+                                    экономия на металле
+                                </li>
+                                <li>Ребра ферм из менее прочного профиля, толщина металла менее 1,5 мм -
+                                    экономия на металле
+                                </li>
+                        
+                                <li>Шаг обребровки ферм более 50 см для профиля менее 60x40x3 -
+                                    экономия на металле
+                                </li>
+                                <li>Шаг ферм более 1,5 м - экономия на металле
+                                </li>
+                                <li>Шаг лагов более 50 см - экономия на металле
+                                </li>
+                                <li>Поликарбонат низкой плотности - экономия на поликарбонате
+                                </li>
+                                <li>Использование кровельных саморезов вместо термошайб - экономия на
+                                    расходниках
+                                </li>
+                                <li>Неправильная обработка металла при покраске (не обрабатывается
+                                    обезжиривателем и скотч-брайтом) - экономия на расходниках
+                                </li>
+                                <li>Глубина столбов при бетонировании менее 1,3 метра - экономия на металле,
+                                    экономия на расходниках
+                                </li>
+                            </ol>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+</div>
+
+
+
+
+        </main>
+
+        <footer class="site-footer inverted" role="contentinfo">
+  <div class="container">
+      <div class="grid-container">
+        <div class="tree-navigation">
+            <div class="tree-column"><div class="tree-column_title">Навесы</div><nav><ul class="tree-list"><li class="tree-item"><a href="../services/naves-iz-polikarbonata/" class="tree-link">Навесы из поликарбоната</a></li><li class="tree-item"><a href="/services/naves-dlya-dachi/" class="tree-link">Навесы для дачи</a></li><li class="tree-item"><a href="/services/naves-dlya-avtomobilya/" class="tree-link">Навесы для автомобиля</a></li><li class="tree-item"><a href="/calc/" class="tree-link">Калькулятор стоимости</a></li><li class="tree-item"><a href="/cases/" class="tree-link">Примеры работ</a></li><li class="tree-item"><a href="/services/naves-dlya-barbekyu/" class="tree-link">Навес для барбекю</a></li><li class="tree-item"><a href="/services/naves-dlya-basseyna/" class="tree-link">Навес для бассейна</a></li><li class="tree-item"><a href="/services/naves-dlya-mangala/" class="tree-link">Навес для мангала</a></li><li class="tree-item"><a href="/services/naves-dlya-mashiny/" class="tree-link">Навес для машины</a></li><li class="tree-item"><a href="/services/dvukhskatnye-navesy/" class="tree-link">Двухскатные навесы</a></li></ul></nav></div><div class="tree-column"><div class="tree-column_title">Козырьки</div><nav><ul class="tree-list"><li class="tree-item"><a href="https://mosnavesi.ru/services/kozyrek-nad-kryltsom/" class="tree-link">Козырьки над крыльцом</a></li><li class="tree-item"><a href="https://mosnavesi.ru/services/kovanyy-kozyrek/" class="tree-link">Кованые козырьки</a></li><li class="tree-item"><a href="/calc/" class="tree-link">Калькулятор стоимости</a></li><li class="tree-item"><a href="/cases/" class="tree-link">Примеры работ</a></li></ul></nav></div><div class="tree-column"><div class="tree-column_title">Клиентам</div><nav><ul class="tree-list"><li class="tree-item"><a href="/services/" class="tree-link">Услуги</a></li><li class="tree-item"><a href="/articles/" class="tree-link">Статьи</a></li><li class="tree-item"><a href="/garanties/" class="tree-link">Гарантии и сертификаты</a></li><li class="tree-item"><a href="/production/" class="tree-link">Производство</a></li><li class="tree-item"><a href="/reviews/" class="tree-link">Отзывы клиентов</a></li><li class="tree-item"><a href="/contacts/" class="tree-link">Контакты</a></li><li class="tree-item"><a href="/promoactions/" class="tree-link">Акции</a></li></ul></nav></div>
+        </div>
+        <div class="site-add-info">
+            <div class="contacts-title">Контакты</div>
+            <div class="contacts">
+                <a class="link phone" href="tel:+74951516801" class="phone ga-event" v-on:click="onClickPhone()"><i class="fas fa-phone-alt"></i>+7 (495) 151-68-01</a>
+                <a class="link email" href="mailto:info@mosnavesi.ru"><i class="fas fa-envelope fa-fw"></i>info@mosnavesi.ru</a>
+                
+            </div>
+            <div class="address">
+                <div class="address-item">
+                  
+                    <div class="h3">Производственная база: </div>
+                    <div class="location">
+                        <i class="location-icon fal fa-home icon"></i>
+                        <div class="location-street">Московская обл., г.о. Подольск, д. Кутьино, 65/11</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="copyrights mt-2">
+                <span>&copy; 2024 Моснавесы</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12">
+        <div class="map-site text-center">
+          <a href="/sitemap/">
+            Карта сайта
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <p class="text-center">
+  <small>
+  (C) ИП Султанов Анвар Саидумарович 2020 - 2024
+</small>
+</p>
+</div>
+</footer>
+
+        
+        <button type="button" class="btn-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <booking-dialog v-model="bookingDialogVisibly" v-on:send-form="onSendForm(2500)" title="Заявка на обратный звонок" class-name="ClientWebOrder"></booking-dialog>
+        <review-dialog v-model="reviewDialogVisibly"></review-dialog>
+        <search-dialog v-model="searchDialogVisibly"></search-dialog>
+        
+    </div> 
+
+    <div id="btn-to-top" class="btn-to-top">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="#ffffff" d="M4.465 263.536l7.07 7.071c4.686 4.686 12.284 4.686 16.971 0L207 92.113V468c0 6.627 5.373 12 12 12h10c6.627 0 12-5.373 12-12V92.113l178.494 178.493c4.686 4.686 12.284 4.686 16.971 0l7.07-7.071c4.686-4.686 4.686-12.284 0-16.97l-211.05-211.05c-4.686-4.686-12.284-4.686-16.971 0L4.465 246.566c-4.687 4.686-4.687 12.284 0 16.97z" />
+        </svg>
+    </div>
+
+    <script src="../scripts/all-scripts.js" rel="preload" as="script"></script>
+
+    
+
+
+
+<!-- 
+
+Разработка калькулятора навесов: Хуршед Якубов (C) 2021-2023. Все права защищены. 
+Любые попытки незаконного использования интеллектуальной собственности будут преследоваться по закону.
+За кражу интеллектуальной собственности предусмотрены административная, уголовная ответственность и компенсация причененного ущерба.
+
+Уважаемые умники и плагиаторы, прежде чем пытаться скопировать нашу интеллектуальную собственность, перепродать ее или переконфигурировать
+под себя, пожалуйста задумайтесь о последствиях, которые вас ждут. 
+
+Изучаем УК РФ по части "в особо крупном размере" (подтвержденная в суде стоимость разработки свыше 5 млн. руб.):
+
+УК РФ Статья 146. Нарушение авторских и смежных прав
+
+1. Присвоение авторства (плагиат), если это деяние причинило крупный ущерб автору или иному правообладателю, -
+наказывается штрафом в размере до двухсот тысяч рублей или в размере заработной платы или иного дохода осужденного 
+за период до восемнадцати месяцев, либо обязательными работами на срок до четырехсот восьмидесяти часов, либо исправительными 
+работами на срок до одного года, либо арестом на срок до шести месяцев.
+
+
+2. Незаконное использование объектов авторского права или смежных прав, а равно приобретение, хранение, перевозка контрафактных 
+экземпляров произведений или фонограмм в целях сбыта, совершенные в крупном размере, -
+наказываются штрафом в размере до двухсот тысяч рублей или в размере заработной платы или иного дохода осужденного за период до 
+восемнадцати месяцев, либо обязательными работами на срок до четырехсот восьмидесяти часов, либо исправительными работами на срок 
+до двух лет, либо принудительными работами на срок до двух лет, либо лишением свободы на тот же срок.
+
+3. Деяния, предусмотренные частью второй настоящей статьи, если они совершены:
+
+а) утратил силу. - Федеральный закон от 08.12.2003 N 162-ФЗ;
+
+б) группой лиц по предварительному сговору или организованной группой;
+
+в) в особо крупном размере;
+
+г) лицом с использованием своего служебного положения, -
+
+наказываются принудительными работами на срок до пяти лет либо лишением свободы на срок до шести лет со штрафом 
+в размере до пятисот тысяч рублей или в размере заработной платы или иного дохода осужденного за период до трех лет 
+или без такового.
+
+Примечание. Деяния, предусмотренные настоящей статьей, признаются совершенными в крупном размере, если стоимость экземпляров 
+произведений или фонограмм либо стоимость прав на использование объектов авторского права и смежных прав превышают сто тысяч рублей, 
+а в особо крупном размере - один миллион рублей.
+
+------------------------------------------------------------------------------
+Мы доводим дело до суда. Это наша принципиальная позиция. Прецеденты уже были.
+------------------------------------------------------------------------------
+
+Контактная информация:
+
+Email:   khourshed@mail.ru 
+Телефон:  +7 (916) 197-07-39 
+
+Стоимость внедрения калькулятора от 500 000 руб. Если не готовы инвестировать такие деньги в развитие, не беспокоить.
+
+-->
+<script src="../scripts/calc.umd.min.js?ver=952"></script>
+
+<script>
+    var loadingInterval = 0;
+</script>
+
+
+    <script src="../scripts/cms-vue-lib.js?v=13" rel="preload" as="script"></script>
+    <script src="../Scripts/services.js?nocache=true?v=4"></script>
+    <script src="../Scripts/mixins/onlineShop.js?v=5"></script>
+    <script src="../Scripts/mixins/view.js?nocache=true"></script>
+    <script src="../scripts/init.js?v=6" rel="preload" as="script"></script>
+
+
+
+
+    
+
+    
+
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+function initCounters()
+{
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(67222159, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+}
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/67222159" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+$(document).ready(function() {
+
+    $(document).one('scroll mousemove keydown', initCounters);
+    setTimeout(initCounters, 3000)
+
+});
+</script>
+
+
+</body>
+
+</html>
